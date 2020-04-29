@@ -1,58 +1,41 @@
 import React from 'react';
 import { Viewer,PointPrimitive,PointPrimitiveCollection, GeoJsonDataSource } from "resium";
 import { Cartesian3, Cartesian2, Color, Cartographic, Transforms } from "cesium";
-
-const data = {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          86.572265625,
-          64.20637724320852
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          86.8798828125,
-          61.689872200460016
-        ]
-      }
-    }
-  ]
-}
+import fire from './Firebase';
 
 class Globe extends React.Component{
   constructor(props){
     super(props);
     this.state={
-
+      data:''
     }
+  }
+
+  componentWillMount = ()=>{
+    fire.database().ref('data').on('value',(data)=>{
+      this.setState({
+        data:JSON.parse(data.val())
+      })
+    })
   }
 
   render(){
     return(
+      <div>
     <Viewer timeline={false} 
     vrButton={false} 
     sceneModePicker={false}
     homeButton={false}
-    navigationHelpButton={false}
-    full>
+    navigationHelpButton={false} full>
+    
       <GeoJsonDataSource
-          data={data}
+          data={this.state.data}
           markerColor={Color.RED}
           markerSize={24}
         />
     
     </Viewer>
+    </div>
     )
   }
 }
