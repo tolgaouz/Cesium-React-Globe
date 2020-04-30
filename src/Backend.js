@@ -1,5 +1,6 @@
 import fire from './Firebase'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Form, Container, Col, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,7 +12,8 @@ class Backend extends React.Component{
     this.state={
       submitDisabled:true,
       error:'',
-      file:null
+      file:null,
+      success:false
     }
   }
 
@@ -35,11 +37,13 @@ class Backend extends React.Component{
   uploadFirebase = (e)=>{
     e.preventDefault()
     fire.database().ref('data').set(this.state.file)
+
   }
 
   render(){
     return(
       <div>
+      <Link to='/' style={{'position':'absolute','left':10,'top':10}}>Back to Globe</Link>
       <Container>
       <Col md={{ span:6, offset:3}}>
       <center>
@@ -58,6 +62,7 @@ class Backend extends React.Component{
         <Button type='submit' disabled={this.state.submitDisabled} style={{'marginTop':'20px'}}>Submit</Button>
       </Form>
       </Col>
+      {this.state.success ? <Alert variant='success'>Data saved successfully!</Alert> : <div></div>}
       </Container>
       </div>
     )

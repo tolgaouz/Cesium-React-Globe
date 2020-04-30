@@ -1,27 +1,20 @@
 {
-  "type": "FeatureCollection",
-  "features": [
+  "data": [
     {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          86.572265625,
-          64.20637724320852
-        ]
-      }
+     "lat":86.87,
+     "long":61.60,
+     "title":"Description Title",
+     "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
+     "type":"evangelic",
+     "live":false
     },
     {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          86.8798828125,
-          61.689872200460016
-        ]
-      }
-    }
+      "lat":82.87,
+      "long":61.60,
+      "title":"Description Title",
+      "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
+      "type":"evangelic",
+      "live":false
+     }
   ]
 }
