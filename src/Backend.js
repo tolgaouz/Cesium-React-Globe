@@ -36,7 +36,11 @@ class Backend extends React.Component{
 
   uploadFirebase = (e)=>{
     e.preventDefault()
-    fire.database().ref('data').set(this.state.file)
+    fire.database().ref('data').set(this.state.file).then(dt=>{
+      this.setState({
+        success:true
+      })
+    })
 
   }
 
@@ -61,8 +65,8 @@ class Backend extends React.Component{
         />
         <Button type='submit' disabled={this.state.submitDisabled} style={{'marginTop':'20px'}}>Submit</Button>
       </Form>
+      {this.state.success ? <Alert style={{marginTop:'30px'}}variant='success'>Data saved successfully!</Alert> : <div></div>}
       </Col>
-      {this.state.success ? <Alert variant='success'>Data saved successfully!</Alert> : <div></div>}
       </Container>
       </div>
     )

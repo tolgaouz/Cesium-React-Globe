@@ -1,11 +1,9 @@
 import React from 'react';
 import { Viewer,Scene,PointPrimitive,PointPrimitiveCollection,Entity, EntityStaticDescription, EntityDescription} from "resium";
 import { GeoJsonDataSource,Cartesian3, Color } from "cesium";
-import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import fire from './Firebase';
-import Collapse from './Collapse'
-import HomeButton from './HomeButton'
+
 
 class Globe extends React.Component{
   constructor(props){
@@ -15,7 +13,8 @@ class Globe extends React.Component{
       render:false,
       currentPoint:null,
       height:window.innerHeight,
-      width:500
+      width:500,
+      show:false
     }
   }
 
@@ -38,6 +37,10 @@ class Globe extends React.Component{
     window.removeEventListener('resize', this.updateDimensions);
   }
 
+  renderCard = (e,target)=>{
+    
+  }
+
   render(){
     let card_style = {
       position:'absolute',
@@ -52,16 +55,21 @@ class Globe extends React.Component{
         sceneModePicker={false}
         homeButton={false}
         navigationHelpButton={false}
-        infoBox={false} full>
+        infoBox={false}
+        full>
+        <Entity
+        ></Entity>
         {this.state.render ? this.state.data.map((val,idx)=>{
           return(
             <Entity
             key={'entity_'+idx}
+            properties={val}
             name="Event Description"
+            point={{pixelSize:8,color:Color.BLUEVIOLET}}
+            onClick={(e,target)=>{console.log(target)}}
             position={Cartesian3.fromDegrees(val['long'],val['lat'],100)}/>
         )}) : <div></div>}
       </Viewer>
-      <Collapse/>
       <Link style={{position:'absolute','top':10,'left':10}} to='/backend'>Go to Backend</Link>
     </div>
     )

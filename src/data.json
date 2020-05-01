@@ -15,6 +15,22 @@
       "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
       "type":"evangelic",
       "live":false
+     },
+     {
+      "lat":32.87,
+      "long":61.60,
+      "title":"Description Title",
+      "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
+      "type":"evangelic",
+      "live":false
+     },
+     {
+      "lat":52.87,
+      "long":61.60,
+      "title":"Description Title",
+      "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
+      "type":"evangelic",
+      "live":false
      }
   ]
 }
