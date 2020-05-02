@@ -5,15 +5,17 @@
      "long":61.60,
      "title":"Description Title",
      "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
-     "type":"evangelic",
-     "live":false
+     "tags":"evangelic",
+     "color":"153,0,0,255",
+     "live":true
     },
     {
       "lat":82.87,
       "long":61.60,
       "title":"Description Title",
       "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
-      "type":"evangelic",
+      "tags":"evangelic",
+      "color":"153,0,0,255",
       "live":false
      },
      {
@@ -21,7 +23,8 @@
       "long":61.60,
       "title":"Description Title",
       "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
-      "type":"evangelic",
+      "tags":"evangelic",
+      "color":"153,0,0,255",
       "live":false
      },
      {
@@ -29,7 +32,8 @@
       "long":61.60,
       "title":"Description Title",
       "vid_url":"https://www.youtube.com/watch?v=ukDAfF0-8q8",
-      "type":"evangelic",
+      "tags":"evangelic",
+      "color":"153,0,0,255",
       "live":false
      }
   ]
