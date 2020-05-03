@@ -52,7 +52,7 @@ class Info extends React.Component {
           </Typography>
           <hr></hr>
           <Typography variant="body1" component="p">
-            Tags: {this.props.data ? this.props.data.type : ''}
+            Tags: {this.props.data ? this.props.data.tags : ''}
           </Typography>
           {this.props.data ? <iframe width="360" height="215" src={"https://www.youtube.com/embed/"+vid_id} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <div></div>}
           <Typography variant="body1" component="p" style={{textDecorationColor:'none'}}>
