@@ -97,7 +97,7 @@ class Globe extends React.Component{
       />
       </div>
       
-      <div id="info" style={{position:'absolute','top':80,'right':20}}>
+      <div id="info" style={{position:'absolute','top':80,'right':20,bottom:20}}>
         <Button variant="contained" color="secondary" onClick={()=>{this.setState({showCard:!this.state.showCard})}}>
           Show Point Information <ArrowDropDownIcon/>
         </Button>
