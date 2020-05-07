@@ -88,6 +88,7 @@ class Globe extends React.Component{
       </Viewer>
       <div style={{position:'absolute','top':10,'left':10}}>
         <Link to='/backend'>Go to Backend</Link>
+        <Link style={{marginLeft:20}}to='/addpoint'>Send us a point!</Link>
         <FormControlLabel
         style={{'marginLeft':'20px',color:'white'}}
         control={<Switch checked={this.state.liveOnly} 
