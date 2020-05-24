@@ -3,9 +3,10 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory';
 import {withRouter} from 'react-router-dom';
-import Globe from './Globe'
-import AddPointForm from './AddPointForm'
-import Backend from './Backend'
+import Globe from './Globe';
+import AddPointForm from './AddPointForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Backend from './Backend';
 const history = createBrowserHistory();
 
 function App() {
